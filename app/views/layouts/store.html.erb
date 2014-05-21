@@ -21,7 +21,15 @@
         <%=@time%>
     </div>
     <div id="main">
-      <%= yield :layout %><!-- <label id="code.depot.e.include"/> -->
+      <!-- START_HIGHLIGHT -->
+      <!-- START:flash -->
+      <% if flash[:notice] -%>
+          <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      <!-- END:flash -->
+      <!-- END_HIGHLIGHT -->
+
+      <%= yield :layout %>
     </div>
   </div>
 </body>
