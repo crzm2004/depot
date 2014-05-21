@@ -1615,3 +1615,320 @@ Processing ProductsController#create (for 127.0.0.1 at 2014-05-20 18:15:22) [POS
 Rendering template within layouts/products
 Rendering products/new
 Completed in 33ms (View: 21, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2014-05-21 11:10:04) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 61ms (View: 49, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2014-05-21 11:10:14) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 67ms (View: 56, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-05-21 11:10:44) [GET]
+
+ActionController::RoutingError (No route matches "/store" with {:method=>:get}):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-05-21 11:10:56) [GET]
+
+ActionController::RoutingError (No route matches "/depot/sotre" with {:method=>:get}):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2014-05-21 11:11:00) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 24ms (View: 16, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-05-21 11:11:05) [GET]
+
+ActionController::RoutingError (No route matches "/stores" with {:method=>:get}):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-05-21 11:11:27) [GET]
+
+ActionController::RoutingError (No route matches "/stores" with {:method=>:get}):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-05-21 11:11:28) [GET]
+
+ActionController::RoutingError (No route matches "/stores" with {:method=>:get}):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:11:30) [GET]
+Rendering store/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:24:13) [GET]
+  [4;36;1mProduct Load (2.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering store/index
+Completed in 57ms (View: 48, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:29:54) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 24ms (View: 15, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:30:09) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:30:34) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 37ms (View: 11, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:32:36) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 34ms (View: 23, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:34:58) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 33ms (View: 22, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:35:00) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 36ms (View: 21, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:38:11) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 31ms (View: 20, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:38:27) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 35ms (View: 25, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:38:32) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 38ms (View: 21, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:38:34) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 36ms (View: 22, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:39:17) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 84ms (View: 75, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#post (for 127.0.0.1 at 2014-05-21 11:39:19) [GET]
+
+ActionController::UnknownAction (No action responded to post. Actions: index):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:39:35) [POST]
+  Parameters: {"authenticity_token"=>"icVaRErHKqXjqnkiZf/zbUe0tM8yvz41/ITHn0jQbpM="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:39:36) [GET]
+  Parameters: {"method"=>"post"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 34ms (View: 22, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:39:37) [GET]
+  Parameters: {"method"=>"post"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 35ms (View: 23, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:39:41) [GET]
+  Parameters: {"method"=>"post"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 31ms (View: 20, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:40:47) [GET]
+  Parameters: {"method"=>"post"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:40:48) [GET]
+  Parameters: {"method"=>"post"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 36ms (View: 23, DB: 0) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:41:07) [GET]
+  Parameters: {"method"=>"post"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 52ms (View: 38, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:41:16) [GET]
+  Parameters: {"method"=>"post"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 47ms (View: 33, DB: 0) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:41:17) [GET]
+  Parameters: {"method"=>"post"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 33ms (View: 22, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:41:17) [GET]
+  Parameters: {"method"=>"post"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/store?method=post]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-21 11:41:42) [GET]
+  Parameters: {"method"=>"post"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 106ms (View: 94, DB: 1) | 200 OK [http://localhost/store?method=post]
