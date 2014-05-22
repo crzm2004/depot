@@ -3649,3 +3649,538 @@ Rendering template within layouts/store
 Rendering store/index
 Rendered store/_cart (4.0ms)
 Completed in 93ms (View: 61, DB: 1) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20140520072934)
+Migrating to AddPriceToProduct (20140520080328)
+Migrating to AddTestData (20140520092442)
+Migrating to CreateSessions (20140521034925)
+Migrating to CreateCarts (20140521060035)
+Migrating to CreateLineItems (20140522015503)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "order_id" integer NOT NULL, "quantity" integer NOT NULL, "total_price" decimal(8,2) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20140522015503')[0m
+Migrating to CreateOrders (20140522020050)
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(10), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20140522020050')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("carts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("line_items")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("orders")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:18:09) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 97ms (View: 46, DB: 0) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:18:11) [POST]
+  Parameters: {"commit"=>"Add to Cart", "id"=>"1", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Redirected to http://localhost:3000/store
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/store_controller.rb:28:in `html'
+  app/controllers/store_controller.rb:28:in `add_to_cart'
+  app/controllers/store_controller.rb:26:in `add_to_cart'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:18:14) [POST]
+  Parameters: {"commit"=>"Add to Cart", "id"=>"2", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Redirected to http://localhost:3000/store
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/store_controller.rb:28:in `html'
+  app/controllers/store_controller.rb:28:in `add_to_cart'
+  app/controllers/store_controller.rb:26:in `add_to_cart'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:18:14) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (4.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (18.0ms)
+Completed in 79ms (View: 52, DB: 1) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:18:17) [POST]
+  Parameters: {"commit"=>"Add to Cart", "id"=>"3", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+Redirected to http://localhost:3000/store
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/store_controller.rb:28:in `html'
+  app/controllers/store_controller.rb:28:in `add_to_cart'
+  app/controllers/store_controller.rb:26:in `add_to_cart'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (61.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:18:19) [POST]
+  Parameters: {"commit"=>"Add to Cart", "id"=>"3", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+Redirected to http://localhost:3000/store
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/store_controller.rb:28:in `html'
+  app/controllers/store_controller.rb:28:in `add_to_cart'
+  app/controllers/store_controller.rb:26:in `add_to_cart'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (99.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:18:21) [POST]
+  Parameters: {"commit"=>"Add to Cart", "id"=>"1", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Redirected to http://localhost:3000/store
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/store_controller.rb:28:in `html'
+  app/controllers/store_controller.rb:28:in `add_to_cart'
+  app/controllers/store_controller.rb:26:in `add_to_cart'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (57.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:18:21) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (11.0ms)
+Completed in 73ms (View: 44, DB: 2) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2014-05-22 10:18:23) [POST]
+  Parameters: {"authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (8.0ms)
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (18.0ms)
+Completed in 71ms (View: 40, DB: 1) | 200 OK [http://localhost/store/checkout]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2014-05-22 10:18:25) [POST]
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "order"=>{"pay_type"=>"", "email"=>"", "address"=>"", "name"=>""}}
+
+ActionController::UnknownAction (No action responded to save_order. Actions: add_to_cart, checkout, empty_cart, index, and redirect_to_index):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2014-05-22 10:19:19) [POST]
+  Parameters: {"authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (9.0ms)
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart (14.0ms)
+Completed in 57ms (View: 24, DB: 1) | 200 OK [http://localhost/store/checkout]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2014-05-22 10:19:20) [POST]
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "order"=>{"pay_type"=>"", "email"=>"", "address"=>"", "name"=>""}}
+
+ActionController::UnknownAction (No action responded to save_order. Actions: add_to_cart, checkout, empty_cart, index, and redirect_to_index):
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2014-05-22 10:27:55) [POST]
+  Parameters: {"authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+Redirected to http://localhost:3000/store
+Completed in 74ms (DB: 0) | 302 Found [http://localhost/store/empty_cart]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:27:55) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 142ms (View: 122, DB: 1) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:27:57) [POST]
+  Parameters: {"id"=>"1", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (12.0ms)
+Rendered store/_cart (23.0ms)
+Completed in 62ms (View: 35, DB: 1) | 200 OK [http://localhost/store/add_to_cart/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:27:59) [POST]
+  Parameters: {"id"=>"2", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (14.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (24.0ms)
+Completed in 63ms (View: 31, DB: 2) | 200 OK [http://localhost/store/add_to_cart/2]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:28:00) [POST]
+  Parameters: {"id"=>"3", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (9.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (20.0ms)
+Completed in 64ms (View: 29, DB: 0) | 200 OK [http://localhost/store/add_to_cart/3]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2014-05-22 10:28:01) [POST]
+  Parameters: {"authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (12.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (23.0ms)
+Completed in 88ms (View: 50, DB: 1) | 200 OK [http://localhost/store/checkout]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2014-05-22 10:28:03) [POST]
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "order"=>{"email"=>"", "name"=>"", "pay_type"=>"", "address"=>""}}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart_item (3.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (15.0ms)
+Completed in 162ms (View: 70, DB: 1) | 200 OK [http://localhost/store/save_order]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2014-05-22 10:28:15) [POST]
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "order"=>{"email"=>"a@a.com", "name"=>"zhangsan", "pay_type"=>"check", "address"=>"sfsdfs"}}
+  [4;36;1mOrder Create (1.0ms)[0m   [0;1mINSERT INTO "orders" ("updated_at", "email", "name", "pay_type", "address", "created_at") VALUES('2014-05-22 02:28:15', 'a@a.com', 'zhangsan', 'check', 'sfsdfs', '2014-05-22 02:28:15')[0m
+  [4;35;1mLineItem Create (0.0ms)[0m   [0mINSERT INTO "line_items" ("updated_at", "product_id", "order_id", "quantity", "total_price", "created_at") VALUES('2014-05-22 02:28:15', 1, 1, 1, 29.95, '2014-05-22 02:28:15')[0m
+  [4;36;1mLineItem Create (1.0ms)[0m   [0;1mINSERT INTO "line_items" ("updated_at", "product_id", "order_id", "quantity", "total_price", "created_at") VALUES('2014-05-22 02:28:15', 2, 1, 1, 27.75, '2014-05-22 02:28:15')[0m
+  [4;35;1mLineItem Create (0.0ms)[0m   [0mINSERT INTO "line_items" ("updated_at", "product_id", "order_id", "quantity", "total_price", "created_at") VALUES('2014-05-22 02:28:15', 3, 1, 1, 28.5, '2014-05-22 02:28:15')[0m
+Redirected to http://localhost:3000/store
+Completed in 119ms (DB: 3) | 302 Found [http://localhost/store/save_order]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:28:15) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 70ms (View: 40, DB: 2) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:30:34) [POST]
+  Parameters: {"id"=>"1", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (7.0ms)
+Rendered store/_cart (11.0ms)
+Completed in 38ms (View: 14, DB: 1) | 200 OK [http://localhost/store/add_to_cart/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:35:47) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (5.0ms)
+Completed in 60ms (View: 34, DB: 1) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:35:49) [POST]
+  Parameters: {"id"=>"1", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (19.0ms)
+Rendered store/_cart (26.0ms)
+Completed in 94ms (View: 38, DB: 1) | 200 OK [http://localhost/store/add_to_cart/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:35:50) [POST]
+  Parameters: {"id"=>"1", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (21.0ms)
+Rendered store/_cart (29.0ms)
+Completed in 147ms (View: 39, DB: 2) | 200 OK [http://localhost/store/add_to_cart/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2014-05-22 10:35:52) [POST]
+  Parameters: {"authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (21.0ms)
+Rendered store/_cart (28.0ms)
+Completed in 119ms (View: 61, DB: 1) | 200 OK [http://localhost/store/checkout]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2014-05-22 10:35:58) [POST]
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "order"=>{"email"=>"a@a.com", "name"=>"zhangsan", "pay_type"=>"cc", "address"=>"sdfsdf"}}
+  [4;35;1mOrder Create (2.0ms)[0m   [0mINSERT INTO "orders" ("updated_at", "email", "name", "pay_type", "address", "created_at") VALUES('2014-05-22 02:35:58', 'a@a.com', 'zhangsan', 'cc', 'sdfsdf', '2014-05-22 02:35:58')[0m
+  [4;36;1mLineItem Create (1.0ms)[0m   [0;1mINSERT INTO "line_items" ("updated_at", "product_id", "order_id", "quantity", "total_price", "created_at") VALUES('2014-05-22 02:35:58', 1, 2, 3, 89.85, '2014-05-22 02:35:58')[0m
+Redirected to http://localhost:3000/store
+Completed in 101ms (DB: 4) | 302 Found [http://localhost/store/save_order]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:35:58) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 93ms (View: 56, DB: 1) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:36:01) [POST]
+  Parameters: {"id"=>"1", "commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (35.0ms)
+Rendered store/_cart (45.0ms)
+Completed in 140ms (View: 54, DB: 2) | 200 OK [http://localhost/store/add_to_cart/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:37:02) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (14.0ms)
+Completed in 126ms (View: 66, DB: 1) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:37:05) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "id"=>"1"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (8.0ms)
+Rendered store/_cart (13.0ms)
+Completed in 57ms (View: 24, DB: 2) | 200 OK [http://localhost/store/add_to_cart/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2014-05-22 10:37:07) [POST]
+  Parameters: {"authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (13.0ms)
+Rendered store/_cart (19.0ms)
+Completed in 88ms (View: 50, DB: 1) | 200 OK [http://localhost/store/checkout]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2014-05-22 10:37:12) [POST]
+  Parameters: {"commit"=>"Place Order", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "order"=>{"name"=>"zhangsan", "pay_type"=>"check", "email"=>"a@a.com", "address"=>"dfgdf"}}
+  [4;36;1mOrder Create (2.0ms)[0m   [0;1mINSERT INTO "orders" ("name", "pay_type", "updated_at", "created_at", "email", "address") VALUES('zhangsan', 'check', '2014-05-22 02:37:12', '2014-05-22 02:37:12', 'a@a.com', 'dfgdf')[0m
+  [4;35;1mLineItem Create (0.0ms)[0m   [0mINSERT INTO "line_items" ("quantity", "product_id", "updated_at", "created_at", "total_price", "order_id") VALUES(2, 1, '2014-05-22 02:37:12', '2014-05-22 02:37:12', 59.9, 3)[0m
+Redirected to http://localhost:3000/store
+Completed in 118ms (DB: 2) | 302 Found [http://localhost/store/save_order]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2014-05-22 10:37:13) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 78ms (View: 53, DB: 1) | 200 OK [http://localhost/store]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.18/lib/action_controller/middleware_stack.rb:72)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/work/learn/ruby/depot/app/controllers/application_controller.rb:7)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2014-05-22 10:37:14) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"tPvGVJYmYXEKoUT4GuEqYCyuSJ+QRrDtwph1rpj8eNo=", "id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (9.0ms)
+Rendered store/_cart (15.0ms)
+Completed in 57ms (View: 23, DB: 0) | 200 OK [http://localhost/store/add_to_cart/1]
